@@ -9,7 +9,7 @@ const App = () => {
   
  
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:8000/users");
+      const response = await axios.get("http://localhost:8000/visitors");
       //console.log(response);
       setData(response.data);
     };
