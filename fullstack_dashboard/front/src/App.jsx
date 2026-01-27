@@ -1,40 +1,24 @@
 import './App.css'
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-
+// import Visitors from './components/dashboard/Visitors'
+// import TotalRevenue  from './components/dashboard/TotalRevenue'
+import Appbar from './components/baseLayout/Appbar'
+import Sidebar from './components/baseLayout/Sidebar'
+import DashboardScreen from './components/dashboard/DashboardScreen'
 
 const App = () => {
 
- const [data, setData] = useState([]);
-  
- 
-    const fetchData = async () => {
-      const response = await axios.get("http://localhost:8000/visitors");
-      //console.log(response);
-      setData(response.data);
-    };
 
-    useEffect(() => {
-      fetchData();
-    }, []);
 
   return (
-    <>
-      <h2>Data From Server</h2>
-      <div>
-        {
-          data.map((datum, idx) => (
-            <div key={idx}>
-              <h2>{datum.loyal_customer}</h2>
-              <p>{datum.month}</p>
-              <p>{datum.new_customer}</p>
-              <p>{datum.create_date}</p>
-              <p>{datum.update_date}</p>
-            </div>
-          ))
-        }
+    <div className='App w-screen flex items-center justify-center flex-col dark:bg-[#212121] dark:text-white'>
+      <div className='page-wrapper min-h-screen flex w-full'>
+        <Sidebar />
+        <div className='content-wrapper w-full'>
+          <Appbar />
+          <DashboardScreen />
+        </div>
       </div>
-    </>
+    </div>
  )
 }
 
