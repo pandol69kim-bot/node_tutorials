@@ -4,7 +4,35 @@ import { fetchCustomer } from '../../redux/slices/apiSlice'
 import HeadTitle from './HeadTitle'
 import { AreaChart, Area, Legend, ResponsiveContainer, Tooltip } from 'recharts';
 
+const formatTooltipValue = (value, name) => {
+  return `${value.replace('_', ' ')} : ${name}`
+}
 
+const CustomTooltipContent = ({payload}) => {
+  if(!payload || !payload.length) return null
+  
+  return (
+    <div className='custom-rechart-tooltip'>
+      <p className='recharts-tooltip'>
+        {
+          payload[0].payload?.month.charAt(0).toUpperCase() + payload[0].payload?.month.slice(1)
+        }
+      </p>
+      <ul className='recharts-tooltip-item-list'>
+        {
+          payload.map((item, index) => {
+            return (
+              <li key={index}>
+                {formatTooltipValue(item.name, item.value)}
+              </li>
+            )
+          })
+        }
+      </ul>
+    </div>
+  )
+
+}
 
 const Customers = () => {
   const dispatch = useDispatch()
@@ -50,7 +78,9 @@ const Customers = () => {
               bottom: 0,
           }}
         >
-          <Tooltip />
+          <Tooltip content={
+            <CustomTooltipContent />            
+          }/>
           <Legend formatter={formatLegendValue} />
 
           <defs>
