@@ -2,11 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-app.use(cors());
+require('dotenv').config();
 
-// app.get('/', (req, res) => {
-//     res.send('Hello world  back');
-// });
+app.use(cors());
+app.use(express.json()) // express 모듈의 json() 메서드 사용
+
+app.get('/', (req, res) => {
+    res.send('Hello world  back');
+});
 
 app.use( require('./routes/visitorsRoute'));
 app.use( require('./routes/revenueRoute'));

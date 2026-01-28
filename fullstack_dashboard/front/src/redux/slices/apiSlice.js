@@ -40,7 +40,7 @@ const apisSlice = createSlice({
         revenueData: null,
         customerData: null,
         targetRealityData: null,
-        topProducstData: null,
+        topProductsData: null,
         isError: false,
     },
     extraReducers: (builder) => {
@@ -57,7 +57,7 @@ const apisSlice = createSlice({
         .addCase(fetchTargetReality.fulfilled, handleFulfilled('targetRealityData'))
         .addCase(fetchTargetReality.rejected, handleRejected)
 
-        .addCase(fetchTopProducts.fulfilled, handleFulfilled('topProcudtsData'))
+        .addCase(fetchTopProducts.fulfilled, handleFulfilled('topProductsData'))
         .addCase(fetchTopProducts.rejected, handleRejected)
     }
 });

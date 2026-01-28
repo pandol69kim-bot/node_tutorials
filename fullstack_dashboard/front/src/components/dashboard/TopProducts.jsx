@@ -7,7 +7,7 @@ const TopProducts = () => {
 
   const dispatch = useDispatch()
 
-  const state = useSelector((state) => state.apis.topProducstData)
+  const state = useSelector((state) => state.apis.topProductsData)
 
   
   useEffect(() => {
@@ -43,9 +43,9 @@ const TopProducts = () => {
                     <td className='py-3 px-4 text-sm'>
                       <div className='min-w-[180px] h-[5px] rounded--full overflow-hidden relative bg-[#c3d3e2]'>
                         <div 
-                          className='bg-[#0095ff] absolute left-0 top-0 rounded-full w-full'
+                          className='bg-[#0095ff] absolute left-0 top-0 rounded-full h-full'
                           style={{
-                            width:  `${item.papularitypercent}`
+                            width:  `${item.papularitypercent}%`
                           }}
                         ></div>
                         
