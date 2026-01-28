@@ -10,6 +10,7 @@ app.use(cors());
 
 app.use( require('./routes/visitorsRoute'));
 app.use( require('./routes/revenueRoute'));
+app.use( require('./routes/customerRoute'));
 
 
 app.listen(process.env.PORT,() => {

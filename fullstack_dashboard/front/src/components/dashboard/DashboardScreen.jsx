@@ -1,6 +1,8 @@
 import React from 'react'
 import Sales from './Sales'
 import Visitors from './Visitors'
+import TotalRevenue from './TotalRevenue'
+import Customers from './Customers'
 
 
 const DashboardScreen = () => {
@@ -11,6 +13,11 @@ const DashboardScreen = () => {
         <Visitors />
 
       </div>
+      <div className='grid grid-cols-[3fr_3fr_2fr]'>
+        <TotalRevenue />
+        <Customers />
+      </div>
+
     </div>
   )
 }
