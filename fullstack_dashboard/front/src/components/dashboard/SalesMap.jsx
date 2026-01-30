@@ -6,7 +6,7 @@ import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
 import geoJSON from '../../constants/world-50m.v1.json';
 import { COLOR_MAP } from '../../constants/menuList';
 
-console.log(COLOR_MAP);
+//console.log(geoJSON);
 const getFillColor = (fillColor) => COLOR_MAP[fillColor] || '#ececec';
 
 const SalesMap = () => {

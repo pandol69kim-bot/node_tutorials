@@ -111,4 +111,4 @@ const apisSlice = createSlice({
   },
 });
 
-export default apisSlice;
+export default apisSlice.reducer;

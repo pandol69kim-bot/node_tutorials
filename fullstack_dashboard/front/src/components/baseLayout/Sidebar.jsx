@@ -5,13 +5,13 @@ import { MENU_LISTS, routes } from '../../constants/menuList';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { setSidebarOpen } from '../../redux/slices/sidebarSlice';
 
 const Sidebar = () => {
   const [currentTab, clickedTab] = useState(0);
+  const dispatch = useDispatch();
 
   const isSidebarOpen = useSelector((state) => state.sidebar.isSidebarOpen);
-
-  // cosnt dispatch = () => {}
 
   //console.log(isSidebarOpen);
 
